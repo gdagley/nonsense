@@ -40,7 +40,7 @@ having to feed or clean up after them.
 
 == LICENSE:
 
-GNU General Public License (GPL)
+GNU General Public License 2.0 (same as original nonsense)
 
 Copyright (c) 2008 Geoffrey Dagley
 
