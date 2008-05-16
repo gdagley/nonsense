@@ -1,7 +1,8 @@
 History.txt
+LICENSE.txt
 Manifest.txt
 README.txt
 Rakefile
-lib/nonsense.rb
 lib/default.yml
+lib/nonsense.rb
 test/test_nonsense.rb
