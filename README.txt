@@ -40,7 +40,7 @@ having to feed or clean up after them.
 
 == LICENSE:
 
-(The MIT License)
+GNU General Public License (GPL)
 
 Copyright (c) 2008 Geoffrey Dagley
 
