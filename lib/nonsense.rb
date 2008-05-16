@@ -19,14 +19,14 @@ class Nonsense
     parse_template self.template
   end
   
-  def parse_template(t)
+  def parse_template(t) #:nodoc:
     return '' unless t
     t = t.dup
     copy = t.gsub!(/\{[^}]+\}/) { |tag| parse tag[1..-2] }
     copy ? copy : t
   end
   
-  def parse tag
+  def parse(tag) #:nodoc:
     return '' unless tag
     parse_case = nil
     parsed = case tag
@@ -54,16 +54,16 @@ class Nonsense
     parsed = adjust_case parsed, parse_case
   end
   
-  def number_in_range(low, high)
+  def number_in_range(low, high) #:nodoc:
     rand(high - low).to_i + low
   end
   
-  def format_current_time(format, low = nil, high = nil)
+  def format_current_time(format, low = nil, high = nil) #:nodoc:
     diff = (low && high) ? number_in_range(low, high) : 0
     (Time.now - diff).strftime format
   end
   
-  def format_assigned_time(format, key, high)
+  def format_assigned_time(format, key, high) #:nodoc:
     existing_time = state[key.downcase]
     elapsed = rand(high)
     time = if existing_time
@@ -75,7 +75,7 @@ class Nonsense
     time.strftime format
   end
   
-  def choose_from_list(list)
+  def choose_from_list(list) #:nodoc:
     items = list.split('|')
     choice = if items.size > 1
       items[rand(items.size)]       # pick one of the elements
@@ -84,7 +84,7 @@ class Nonsense
     end
   end
   
-  def embed_character(character)
+  def embed_character(character)  #:nodoc:
     case character
     when 'n'    then "\n"               # newline
     when '0'    then ''                 # null
@@ -95,34 +95,34 @@ class Nonsense
     end
   end
   
-  def assign_command(key, command)
+  def assign_command(key, command) #:nodoc:
     state[key.downcase] = parse(command)
     ''
   end
   
-  def assign_literal(key, value)
+  def assign_literal(key, value)  #:nodoc:
     state[key.downcase] = value
     ''
   end
   
-  def retrieve_assigned(key)
+  def retrieve_assigned(key)  #:nodoc:
     value = state[key.downcase]
     value ? value : parse(key)
   end
   
-  def retrieve_multiple(key, low, high)
+  def retrieve_multiple(key, low, high)  #:nodoc:
     n = number_in_range(low, high)
     return '' if n == 0
     (1..n).collect { |i| parse(key) }.join(" ")
   end
   
-  def retrieve_data(key)
+  def retrieve_data(key)  #:nodoc:
     return '' unless key
     choices = data[key.downcase]
     choices ? choices[rand(choices.size)] : ''
   end
   
-  def adjust_case parsed, parse_case
+  def adjust_case(parsed, parse_case)  #:nodoc:
     case parse_case
     when /^[A-Z0-9]+$/    then parsed.upcase
     when /^[a-z0-9]+$/    then parsed.downcase
