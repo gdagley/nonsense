@@ -1,0 +1,7 @@
+History.txt
+Manifest.txt
+README.txt
+Rakefile
+lib/nonsense.rb
+lib/default.yml
+test/test_nonsense.rb
