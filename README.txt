@@ -38,6 +38,8 @@ having to feed or clean up after them.
 
 * sudo gem install nonsense
 
+source is hosted at https://github.com/gdagley/nonsense
+
 == LICENSE:
 
 GNU General Public License 2.0 (same as original nonsense)
