@@ -1,7 +1,7 @@
 require 'yaml'
 
 class Nonsense
-  VERSION = '0.0.1'
+  VERSION = '1.0.0'
   
   attr_accessor :template, :data, :state, :debug
   
