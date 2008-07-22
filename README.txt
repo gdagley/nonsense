@@ -11,8 +11,6 @@ having to feed or clean up after them.
 
 == FEATURES/PROBLEMS:
 
-* FIX (list of features or problems)
-
 == SYNOPSIS:
 
   require 'lib/nonsense'
